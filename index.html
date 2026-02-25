@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List Simples: Gerencie Tarefas Diárias com HTML, CSS e JS</title>
+    <meta name="description" content="Crie sua lista de tarefas personalizada com esta Todo List responsiva em HTML, CSS e JavaScript. Adicione, marque como concluída e remova itens facilmente.">
+    <meta name="keywords" content="todo list, lista de tarefas, HTML, CSS, JavaScript, programação web">
+    <meta name="author" content="Seu Nome">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+<header class="header">
+  <div>
+    <h1 id="titulo-pagina">Minha To-do List</h1>
+    <p id="descricao-pagina">Organize suas tarefas diárias de forma simples e eficiente.</p>
+  </div>
+
+  <button id="theme-toggle" aria-label="Alternar tema">
+    🌙
+  </button>
+        </header>
+        <form id="todo-form">
+            <input type="text" id="todo-input" placeholder="Digite uma nova tarefa..." required>
+            <button type="submit">Adicionar</button>
+        </form>
+        <ul id="todo-list" aria-label="Lista de tarefas pendentes"></ul>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
