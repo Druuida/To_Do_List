@@ -9,23 +9,41 @@ todoForm.addEventListener('submit', (event) => {
   if (!text) return;
 
   const li = document.createElement('li');
-  li.innerHTML = `
-    ${text}
-    <button class="delete">Remover</button>
-  `;
 
-  li.addEventListener('click', (e) => {
-    if (!e.target.classList.contains('delete')) {
-      li.classList.toggle('completed');
-    }
+  // ✅ Checkbox
+  const checkbox = document.createElement('input');
+  checkbox.type = 'checkbox';
+  checkbox.classList.add('check');
+  checkbox.setAttribute('aria-label', 'Marcar tarefa como concluída');
+
+  // ✅ Texto da tarefa
+  const span = document.createElement('span');
+  span.textContent = text;
+  span.classList.add('task-text');
+
+  // ✅ Botão lixeira
+  const deleteBtn = document.createElement('button');
+  deleteBtn.innerHTML = '🗑️';
+  deleteBtn.classList.add('delete');
+  deleteBtn.setAttribute('aria-label', 'Remover tarefa');
+
+  // Marcar como concluída
+  checkbox.addEventListener('change', () => {
+    li.classList.toggle('completed');
   });
 
-  const deleteBtn = li.querySelector('.delete');
+  // Remover tarefa
   deleteBtn.addEventListener('click', () => {
     todoList.removeChild(li);
   });
 
+  // Montar estrutura
+  li.appendChild(checkbox);
+  li.appendChild(span);
+  li.appendChild(deleteBtn);
+
   todoList.appendChild(li);
+
   todoInput.value = '';
   todoInput.focus();
 });
