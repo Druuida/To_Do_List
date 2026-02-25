@@ -10,34 +10,32 @@ todoForm.addEventListener('submit', (event) => {
 
   const li = document.createElement('li');
 
-  // ✅ Checkbox
+  
   const checkbox = document.createElement('input');
   checkbox.type = 'checkbox';
   checkbox.classList.add('check');
   checkbox.setAttribute('aria-label', 'Marcar tarefa como concluída');
 
-  // ✅ Texto da tarefa
+ 
   const span = document.createElement('span');
   span.textContent = text;
   span.classList.add('task-text');
 
-  // ✅ Botão lixeira
+  
   const deleteBtn = document.createElement('button');
   deleteBtn.innerHTML = '🗑️';
   deleteBtn.classList.add('delete');
   deleteBtn.setAttribute('aria-label', 'Remover tarefa');
 
-  // Marcar como concluída
   checkbox.addEventListener('change', () => {
     li.classList.toggle('completed');
   });
 
-  // Remover tarefa
+ 
   deleteBtn.addEventListener('click', () => {
     todoList.removeChild(li);
   });
 
-  // Montar estrutura
   li.appendChild(checkbox);
   li.appendChild(span);
   li.appendChild(deleteBtn);
